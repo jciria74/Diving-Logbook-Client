@@ -1,0 +1,181 @@
+@import "../../helpers/variables";
+
+.UserPage {
+  padding: 0;
+  margin: 0;
+  background-color: $white;
+
+  .upper-user-section {
+    height: 25vh;
+
+    .date {
+      justify-content: flex-end;
+      margin: 0.5rem 1rem;
+      display: flex;
+      p {
+        font-size: 0.75rem;
+        font-weight: bold;
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: space-evenly;
+
+      .icon-info {
+        p {
+          font-size: 0.75rem;
+          font-weight: bold;
+          line-height: initial;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .middle-user-section {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 60vh;
+    background-color: $navy;
+    border-radius: 0 70px 0 0;
+
+    .category {
+      width: 80px;
+      height: 80px;
+      background-color: $turquoise;
+      border: 1px solid $navy;
+      border-radius: 50%;
+      left: 50%;
+      top: 0px;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      position: absolute;
+
+      hr {
+        margin: 0;
+        width: 60px;
+        background-color: $navy;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        position: absolute;
+      }
+
+      .divings-number,
+      .diving-level {
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          font-weight: bold;
+          font-size: 1.5rem;
+          color: $navy;
+        }
+      }
+
+      .diving-level {
+        flex-direction: column;
+        justify-content: flex-start;
+
+        p {
+          font-size: 0.8rem;
+          font-weight: bold;
+          color: $purple;
+        }
+        img {
+          height: 15px;
+          color: $purple;
+        }
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $white;
+      width: 90%;
+      height: 80%;
+      border-radius: 0px 70px 20px 0px;
+      margin-top: 30px;
+
+      p {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .location-info {
+        border: 1px solid $skyBlue;
+        border-radius: 20px;
+        padding: 3px 20px;
+        margin: 5px 0;
+        -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+        -moz-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+        box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+      }
+
+      .icon-info {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid $skyBlue;
+        height: 60%;
+        width: 75%;
+        border-radius: 20px;
+        margin: 5px 0;
+        -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+        -moz-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+        box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+
+        .general-info {
+          .diving-info {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            text-align: center;
+            p {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .time-info {
+        img {
+          height: 70px;
+        }
+
+        h1 {
+          font-weight: bold;
+          font-size: 1.5rem;
+          line-height: 25px;
+          text-align: center;
+        }
+      }
+
+      button {
+        background-color: $skyBlue;
+        color: $white;
+        font-weight: bold;
+        width: 9rem;
+        height: 2rem;
+        border: none;
+        border-radius: 20px;
+        margin: 5px 0;
+        -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+        -moz-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+        box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.3);
+      }
+    }
+  }
+  .lower-user-section {
+    height: 7vh;
+    background-color: $navy;
+  }
+}

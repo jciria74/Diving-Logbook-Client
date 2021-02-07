@@ -1,0 +1,18 @@
+.centered {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .logo {
+    width: 200px;
+  }
+
+  .manta-img {
+    width: 20px;
+    opacity: 0.2;
+    margin-bottom: -280px;
+    margin-top: 20px;
+  }
+}

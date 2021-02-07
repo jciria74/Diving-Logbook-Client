@@ -1,0 +1,21 @@
+@import "../../helpers/variables";
+
+.navbar {
+  border-bottom: 1px solid $skyBlue;
+
+  .navbar-burger:hover {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  span {
+    color: $skyBlue;
+  }
+
+  .navbar-item {
+    p {
+      color: $skyBlue;
+      font-size: 12px;
+      text-align: right;
+    }
+  }
+}
