@@ -1,28 +1,27 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import { AuthContext } from './contexts/authContext';
 import Portada from './components/Portada/Portada';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
 import UserPage from './components/pages/UserPage';
 import DiveRegistration from './components/pages/DiveRegistration';
+import Map from './components/Map/Map';
 import 'bulma/css/bulma.css';
 import './App.scss';
 
 const App = () => {
   // ------------- CONTEXTO AUTENTICACIÓN ---------------
-  const { authState, checkIfLoggedIn } = useContext(AuthContext);
+  const { authState } = useContext(AuthContext);
 
   // ---------------- ESTADO DE APP ---------------------
   const [state, setState] = useState();
   const [portadaOn, setPortadaOn] = useState(true);
 
-  const jumpToLoginComponent = () => {
-    <Redirect to='/login' />;
-  };
+  // const jumpToLoginComponent = () => {
+  //   <Redirect to='/login' />;
+  // };
 
   useEffect(() => {
     setTimeout(() => {
@@ -40,11 +39,7 @@ const App = () => {
             exact
             path='/'
             render={() =>
-              !authState.isLogged ? (
-                <Login />
-              ) : (
-                <Redirect to='/dive-registration' />
-              )
+              !authState.isLogged ? <Login /> : <Redirect to='/user-page' />
             }
           />
 

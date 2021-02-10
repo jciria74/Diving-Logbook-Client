@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import MyContextProvider from './contexts/myContext';
+import UserContextProvider from './contexts/userContext';
 import AuthContextProvider from './contexts/authContext';
 import './index.css';
 import App from './App';
@@ -9,13 +9,13 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MyContextProvider>
+    <UserContextProvider>
       <AuthContextProvider>
         <Router>
           <App />
         </Router>
       </AuthContextProvider>
-    </MyContextProvider>
+    </UserContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

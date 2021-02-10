@@ -1,4 +1,4 @@
-@import "../../helpers/variables";
+@import '../../helpers/variables';
 
 .UserPage {
   padding: 0;
@@ -7,6 +7,11 @@
 
   .upper-user-section {
     height: 25vh;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     .date {
       justify-content: flex-end;

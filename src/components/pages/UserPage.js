@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/authContext';
+import { UserContext } from '../../contexts/userContext';
 import UserService from '../../services/user-service';
 import Navbar from '../Navbar/Navbar';
 import './UserPage.scss';
@@ -19,6 +21,7 @@ const UserPage = () => {
 
   // ------------- CONTEXTO AUTENTICACIÓN ---------------
   const { authState, setAuthState } = useContext(AuthContext);
+  const { userState, setUserState } = useContext(UserContext);
 
   //------------------ ESTADOS -------------------
   const [actualDate, setActualDate] = useState('');
@@ -51,9 +54,8 @@ const UserPage = () => {
 
     //------- Petición para obtener los dives del usuario ---------
     userService.getAllDives(authState.loggedinUser._idUser).then((result) => {
-      console.log(result);
-      setAuthState({
-        ...authState,
+      setUserState({
+        ...userState,
         dives: result,
         lastDive: result[result.length - 1],
       });
@@ -76,11 +78,13 @@ const UserPage = () => {
               <p>Mis</p>
               <p>inmersiones</p>
             </div>
-            <div className='icon-info'>
-              <img src={inmersiones} alt='icon-registro' />
-              <p>Registrar</p>
-              <p>inmersión</p>
-            </div>
+            <Link to='/dive-registration' className='erase-default'>
+              <div className='icon-info'>
+                <img src={inmersiones} alt='icon-registro' />
+                <p>Registrar</p>
+                <p>inmersión</p>
+              </div>
+            </Link>
             <div className='icon-info'>
               <img src={registro} alt='icon-inmersiones' />
               <p>Mi </p>
@@ -92,7 +96,7 @@ const UserPage = () => {
         <div className='middle-user-section'>
           <div className='category'>
             <div className='divings-number'>
-              <h1>{authState.dives && authState.dives.length}</h1>
+              <h1>{userState.dives && userState.dives.length}</h1>
             </div>
             <hr />
             <div className='diving-level'>
@@ -104,8 +108,8 @@ const UserPage = () => {
             <p>Última inmersión</p>
             <div className='location-info'>
               <p>
-                {authState.lastDive &&
-                  `${authState.lastDive.place}, ${authState.lastDive.country}`}
+                {userState.lastDive &&
+                  `${userState.lastDive.place}, ${userState.lastDive.country}`}
               </p>
             </div>
             <div className='icon-info'>
@@ -113,39 +117,51 @@ const UserPage = () => {
                 <div className='diving-info'>
                   <img src={tank} alt='oxigen-tank' />
                   <p>
-                    {authState.lastDive && authState.lastDive.tank_capacity}
+                    {`${
+                      userState.lastDive &&
+                      (userState.lastDive.tank_capacity || ' ---- ')
+                    }  bar`}
                   </p>
                 </div>
                 <div className='diving-info'>
                   <img src={gaugeIni} alt='manometer' />
                   <p>
-                    {authState.lastDive &&
-                      authState.lastDive.start_pressure_tank}
+                    {`${
+                      userState.lastDive &&
+                      (userState.lastDive.start_pressure_tank || ' ---- ')
+                    } bar`}
                   </p>
                 </div>
                 <div className='diving-info'>
                   <img src={gaugeFin} alt='manometer' />
                   <p>
-                    {authState.lastDive && authState.lastDive.end_pressure_tank}
+                    {`${
+                      (userState.lastDive &&
+                        userState.lastDive.end_pressure_tank) ||
+                      ' ---- '
+                    } bar`}
                   </p>
                 </div>
                 <div className='diving-info'>
                   <img src={depth} alt='depth' />
-                  <p>{authState.lastDive && authState.lastDive.max_depth}</p>
+                  <p>{`${
+                    (userState.lastDive && userState.lastDive.max_depth) ||
+                    ' ---- '
+                  } m`}</p>
                 </div>
                 <div className='diving-info'>
                   <img src={termometro} alt='termometer' />
                   <p>
-                    {authState.lastDive &&
-                      `${authState.lastDive.water_temperature} ºC`}
+                    {userState.lastDive &&
+                      `${userState.lastDive.water_temperature || ' ---- '} ºC`}
                   </p>
                 </div>
               </div>
               <div className='time-info'>
                 <img src={watch} alt='diving-watch' />
                 <h1>
-                  {authState.lastDive &&
-                    `${authState.lastDive.water_temperature}`}{' '}
+                  {userState.lastDive &&
+                    `${userState.lastDive.duration || ' ---- '}`}{' '}
                   <br /> min
                 </h1>
               </div>

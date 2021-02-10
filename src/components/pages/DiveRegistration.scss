@@ -73,8 +73,15 @@
     }
 
     .map {
+      .coord-lat {
+        justify-content: flex-end;
+      }
+
+      .coord {
+        border: 1px solid $navy;
+      }
       text-align: center;
-      background-color: $gray;
+      background-color: $white;
       margin-top: -30px;
       padding-top: 1rem;
 
@@ -96,8 +103,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 200px;
-        background-color: #92b8f5;
         margin: 0 -1.5rem;
       }
       button {
@@ -113,6 +118,11 @@
         &:focus {
           outline: none;
           outline-offset: 0;
+        }
+
+        h2 {
+          font-size: 1rem;
+          font-weight: bolder;
         }
       }
     }
