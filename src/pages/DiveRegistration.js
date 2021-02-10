@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
 import './DiveRegistration.scss';
-import UserService from '../../services/user-service';
-import { AuthContext } from '../../contexts/authContext';
-import { UserContext } from '../../contexts/userContext';
-import Map from '../Map/Map';
-import Navbar from '../Navbar/Navbar';
-import useGeoLocation from '../../hooks/useGeoLocation';
+import UserService from '../services/user-service';
+import { AuthContext } from '../contexts/authContext';
+import { UserContext } from '../contexts/userContext';
+import Map from '../components/Map/Map';
+import Navbar from '../components/Navbar/Navbar';
+import useGeoLocation from '../hooks/useGeoLocation';
 
 const DiveRegistration = (props) => {
   const userService = new UserService();

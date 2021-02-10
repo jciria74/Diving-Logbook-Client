@@ -1,4 +1,4 @@
-@import '../../helpers/variables';
+@import '../helpers/variables';
 
 .DiveRegistration {
   background-color: $white;
@@ -45,6 +45,10 @@
         border-radius: 30px;
         border: none;
         text-align: center;
+
+        p {
+          font-size: 0.85rem;
+        }
         &:focus {
           outline: none;
           outline-offset: 0;

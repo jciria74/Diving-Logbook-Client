@@ -18,7 +18,7 @@ const Map = () => {
   const YOUR_LOCATION = [39.5945038, 2.6106201];
 
   return (
-    <MapContainer center={YOUR_LOCATION} zoom={8}>
+    <MapContainer center={YOUR_LOCATION} zoom={7}>
       <TileLayer url={URL} attribution={ATTRIBUTION} />
       <Marker position={YOUR_LOCATION}>
         <Popup>

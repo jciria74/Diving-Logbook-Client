@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../contexts/authContext';
-import { UserContext } from '../../contexts/userContext';
-import UserService from '../../services/user-service';
-import Navbar from '../Navbar/Navbar';
+import { AuthContext } from '../contexts/authContext';
+import { UserContext } from '../contexts/userContext';
+import UserService from '../services/user-service';
+import Navbar from '../components/Navbar/Navbar';
 import './UserPage.scss';
-import medal from '../../icons/medal-purple.svg';
-import equipo from '../../icons/miEquipo.svg';
-import inmersiones from '../../icons/misInmersiones.svg';
-import registro from '../../icons/registro.svg';
-import watch from '../../icons/diving-watch.svg';
-import termometro from '../../icons/termometer.svg';
-import depth from '../../icons/depth-blue.svg';
-import gaugeIni from '../../icons/gauge_ini.svg';
-import gaugeFin from '../../icons/gauge_fin.svg';
-import tank from '../../icons/oxygen-tank.svg';
+import medal from '../icons/medal-purple.svg';
+import equipo from '../icons/miEquipo.svg';
+import inmersiones from '../icons/misInmersiones.svg';
+import registro from '../icons/registro.svg';
+import watch from '../icons/diving-watch.svg';
+import termometro from '../icons/termometer.svg';
+import depth from '../icons/depth-blue.svg';
+import gaugeIni from '../icons/gauge_ini.svg';
+import gaugeFin from '../icons/gauge_fin.svg';
+import tank from '../icons/oxygen-tank.svg';
 
 const UserPage = () => {
   const userService = new UserService();
